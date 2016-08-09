@@ -1,0 +1,32 @@
+// Print out event integers greater than 3, sorted.
+  private static void exercise1() {
+    List<Integer> integers = Arrays.asList(4, 3, 7, 9, 1, 8, 6, 5, 2);
+
+    integers.stream()
+            .filter(n -> n % 2 == 0 && n > 3)
+            .sorted()
+            .forEach(System.out::println);
+  }
+
+  // Print out distinct names, regardless of casing, in reverse order.
+  private static void exercise2() {
+    List<String> names = Arrays.asList("Aaron", "Aleksi", "Betty", "aaron", "aleksi", "betty");
+
+    names.stream()
+         .map(s -> s.toLowerCase())
+         .distinct()
+         .sorted((s1, s2) -> s2.compareTo(s1))
+         .map(s -> Character.toUpperCase(s.charAt(0)) + s.substring(1))
+         .forEach(System.out::println);
+  }
+
+  private static void exercise3() {
+    List<Integer> data = Arrays.asList(97, 100, 88, 95, 90, 84);
+
+    double sum =
+        data.stream()
+            .reduce(0, (a, b) -> a + b)
+            .doubleValue();
+
+    System.out.println(sum / data.size());
+  }
