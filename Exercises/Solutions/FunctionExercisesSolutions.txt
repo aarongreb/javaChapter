@@ -1,0 +1,56 @@
+// Write a Function that will take an Integer and return its value multiplied by 2.
+// Call the function to print out the result.
+private static void exercise1() {
+  Function<Integer, Integer> func = new Function<Integer, Integer>() {
+    public Integer apply(Integer n) {
+      return n * 2;
+    }
+  };
+
+  System.out.println(func.apply(10));
+}
+
+// Convert exercise 1 by defining the Function as a lambda expression.
+private static void exercise2() {
+  Function<Integer, Integer> func = (n) -> n * 2;
+
+  System.out.println(func);
+}
+
+// Use a Predicate to remove all animals that start with "d" from an array.
+private static void exercise3() {
+  ArrayList<String> animals = new ArrayList<>();
+  animals.add("dog");
+  animals.add("cat");
+  animals.add("mouse");
+  animals.add("duck");
+  animals.add("zebra");
+
+  Predicate<String> pred = new Predicate<String>() {
+    public boolean test(String s) {
+      return s.startsWith("d");
+    }
+  };
+
+  animals.removeIf(pred);
+
+  System.out.println(animals.toString());
+}
+
+// Use a UnaryOperator to replace all strings in an array with null;
+private static void exercise4() {
+  ArrayList<Object> array = new ArrayList<>();
+  array.add("string");
+  array.add(5);
+  array.add(40.0);
+  array.add(new Object());
+
+  UnaryOperator<Object> op = new UnaryOperator<Object>() {
+    public Object apply(Object o) {
+      return (o.getClass() == String.class) ? null : o;
+    }
+  };
+
+  array.replaceAll(op);
+  System.out.println(array);
+}

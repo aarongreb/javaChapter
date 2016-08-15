@@ -1,49 +1,51 @@
 package javaChapter;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
 
 public class FunctionExercises {
-  class Date {
-    String day;
-    String month;
-    float year;
-
-    Date(String day, String month, float year) {
-      this.day = day;
-      this.month = month;
-      this.year = year;
-    }
-  }
 
   public static void main(String[] args) {
-    List<Date> dates = new ArrayList();
+    exercise1();
 
-    Function<Date, String> dateStringFunction = new Function<Date, String>() {
-      public String apply(Date d) {
-        return d.month + " " + d.day + ", " + d.year;
-      }
-    };
+    exercise2();
+
+    exercise3();
+
+    exercise4();
   }
 
+  // Write a Function that will take an Integer and return its value multiplied by 2.
+  // Call the function to print out the result.
   private static void exercise1() {
-    List<String> list = Arrays.asList("Aaron", "David", "Aboli", "Luke", "Dale", "Susumu");
-
     /* Your solution goes here */
   }
 
-  // Print out all odd numbers greater than 5
+  // Convert exercise 1 by defining the Function as a lambda expression.
   private static void exercise2() {
-    List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
     /* Your solution goes here */
   }
 
-  // Use a Predicate function to print out all non-null values in an array
+  // Use a Predicate to remove animals from an array if they start with "d".
   private static void exercise3() {
-    List<Object> list = Arrays.asList("a string", 3, null, "", false, null);
+    ArrayList<String> animals = new ArrayList<>();
+    animals.add("dog");
+    animals.add("cat");
+    animals.add("mouse");
+    animals.add("duck");
+    animals.add("zebra");
+
+    /* Your solution goes here */
+    System.out.println(LocalTime.of(13, 23, 14, 452));
+  }
+
+  // Use a UnaryOperator to replace all strings in an array with null;
+  private static void exercise4() {
+    ArrayList<Object> array = new ArrayList<>();
+    array.add("string");
+    array.add(5);
+    array.add(40.0);
+    array.add(new Object());
 
     /* Your solution goes here */
   }
