@@ -1,0 +1,29 @@
+// Display the current time but for tomorrow.
+private static void exercise1() {
+  LocalDateTime futureTime = LocalDateTime.now().plusDays(1);
+
+  System.out.println(futureTime);
+}
+
+// Display today's date from last year.
+private static void exercise2() {
+  LocalDate pastDate = LocalDate.now().minusYears(1);
+
+  System.out.println(pastDate);
+}
+
+// Using a Period, display your 50th birthday.
+private static void exercise3() {
+  LocalDate birthday = LocalDate.of(1977, Month.MARCH, 8);
+  Period p = Period.of(50, 0, 0);
+
+  System.out.println(birthday.plus(p));
+}
+
+// Display your start date in the format MM/DD/YYYY
+private static void exercise4() {
+  LocalDate startDate = LocalDate.of(2015, Month.APRIL, 13);
+  DateTimeFormatter f = DateTimeFormatter.ofPattern("MM/dd/YYYY");
+
+  System.out.println(startDate.format(f));
+}
